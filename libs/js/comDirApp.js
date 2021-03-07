@@ -350,7 +350,7 @@ $("#btn-saveAddNewDepartment").on("click", function() {
                 }
             }
             if(existed){
-                const alertMessage = $(".alertTxt").html('This Department aready exists');
+                const alertMessage = $(".alertTxt").html('This department aready exists at this location');
                 alertModal(alertMessage);
                 
                 return 
@@ -408,18 +408,22 @@ $("#btn-deleteDepartment").on("click", function() {
                 $("#deptDeleteDeniedModal").modal('show');
                 $("#deleteDeptModal").modal('hide');
               } else {
-                $.ajax({
-                    url: 'libs/php/deleteDepartmentByID.php',
-                    method: 'POST',
-                    dataType: 'json',
-                    data: {
-                        deleteDeptID: $( "#selectedDepartmentToDelete option:selected" ).val()
-                    },
-                    success: function (result) {
-                        alertMessage = $(".alertTxt").html('Department Record Deleted.');
-                        alertModal(alertMessage);
-                        populateTable();
-                    }
+                $("#confirmDeletionModal").modal('show');
+                $("#btn-confirmDeletion").on("click", function() {
+                    $.ajax({
+                        url: 'libs/php/deleteDepartmentByID.php',
+                        method: 'POST',
+                        dataType: 'json',
+                        data: {
+                            deleteDeptID: $( "#selectedDepartmentToDelete option:selected" ).val()
+                        },
+                        success: function (result) {
+                            $("#confirmDeletionModal").modal('hide');
+                            alertMessage = $(".alertTxt").html('Department Record Deleted.');
+                            alertModal(alertMessage);
+                            populateTable();
+                        }
+                    });
                 });
             }
         }
