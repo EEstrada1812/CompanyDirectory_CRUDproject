@@ -1,11 +1,80 @@
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+content: "";
+position: fixed;
+top: calc(50% - 30px);
+left: calc(50% - 30px);
+border: 6px solid #f2f2f2;
+border-top: 6px solid #56829e ;
+border-radius: 50%;
+width: 60px;
+height: 60px;
+-webkit-animation: animate-preloader 1s linear infinite;
+animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+
+html {
+    height: 100vh;
+}
+
 body {
-    color: black;
-    background: rgb(9,9,121);
-    background: linear-gradient(195deg, rgba(9,9,121,1) 0%, rgba(97,128,232,0.7906512946975666) 0%, rgba(0,212,255,1) 100%);
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #1e5799 0%, #2989d8 50%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 #mainTable_wrapper{
     background-color: white;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#mainTable_filter > label {
+    padding: 0.5rem;
+}
+
+#mainTable_info {
+    padding: 0.5rem;
 }
 
 .btn {
@@ -15,8 +84,4 @@ body {
 .modal-body {
     max-height: 70vh;
     overflow-y: auto;
-  }
-
-#mainTable_filter > label {
-    padding: 0.5rem;
 }

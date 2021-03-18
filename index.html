@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="contact-book.png" rel="icon">
+    <link href="contact-book.png" rel="apple-touch-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/b-1.6.5/fh-3.1.8/r-2.2.7/sl-1.3.1/datatables.min.css"/>
-
-
-
     <link rel="stylesheet" href="libs/css/comDirStyles.css">
-
-
-    <title>Local Host V2 Company Directory</title>
+    <title>Company Directory</title>
 </head>
 <body>
-
+    <div id="preloader"></div>
     <div class="container" style="margin-top: 30px;">
 
 <!--****************
@@ -195,7 +192,7 @@ Departments Content
         </div>
 
         <!-- Delete Department Denied Modal -->
-        <div id="deptDeleteDeniedModal" class="modal fade">
+        <div id="deptDeleteDeniedModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -292,7 +289,7 @@ Locations Content
     </div>
 
     <!-- Delete Location Denied b/c of attached Employees Modal -->
-    <div id="locationDeleteDeniedModal" class="modal">
+    <div id="locationDeleteDeniedModal" class="modal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -323,7 +320,7 @@ Locations Content
     </div>
 
     <!-- Delete Location Denied b/c of attached Department Modal -->
-    <div id="locationDeleteDeniedBcDeptModal" class="modal">
+    <div id="locationDeleteDeniedBcDeptModal" class="modal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -384,7 +381,7 @@ General ALert Content
 **********************-->
 
         <!-- General Alert Modal -->
-        <div id="alertModal" class="modal fade">
+        <div id="alertModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

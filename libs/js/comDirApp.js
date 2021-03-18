@@ -1,4 +1,12 @@
 //******** FUNCTIONS ************/
+$(window).on('load', function () {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function () {
+        $(this).remove();
+      });
+    }
+  });
+
 var table;
 function populateTable() {
     $.ajax({
@@ -350,7 +358,7 @@ $("#btn-saveAddNewDepartment").on("click", function() {
                 }
             }
             if(existed){
-                const alertMessage = $(".alertTxt").html('This department aready exists at this location');
+                const alertMessage = $(".alertTxt").html('This department aready exists at this location.');
                 alertModal(alertMessage);
                 
                 return 
@@ -538,12 +546,12 @@ $("#btn-deleteLocation").on("click", function() {
                     console.log('fitLen', filteredLocations.length);
                     $("#locationDeleteDeniedModal").modal('show');
                     $("#deleteLocationModal").modal('hide');
-                    alertMessage = $(".alertTxt").html('Error: Cannot delete Location with current employees.');
+                    alertMessage = $(".alertTxt").html('Error: Cannot delete location with current employees.');
                     
                 } else if (filteredLocations.length !== 0) {
                     $("#locationDeleteDeniedBcDeptModal").modal('show');
                     $("#deleteLocationModal").modal('hide');
-                    alertMessage = $(".alertTxt").html('Error: Cannot delete Location with current departments.');
+                    alertMessage = $(".alertTxt").html('Error: Cannot delete location with current departments.');
                 }
                 
               } else {
